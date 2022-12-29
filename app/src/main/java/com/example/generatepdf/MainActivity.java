@@ -171,9 +171,15 @@ public class MainActivity extends AppCompatActivity {
 
         document.finishPage(page);
 
-        //String path = Environment.getExternalStorageDirectory().getAbsolutePath() + Fname;
+        String folder_name = "Receipts";
+        File f = new File(Environment.getExternalStorageDirectory(), folder_name);
+        if (!f.exists()) {
+            f.mkdirs();
+        }
 
-        File file = new File(Environment.getExternalStorageDirectory(), "Receipt.pdf");
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"+folder_name;
+
+        File file = new File(path, "Receipt1.pdf");
 
         try {
             document.writeTo(new FileOutputStream(file));
