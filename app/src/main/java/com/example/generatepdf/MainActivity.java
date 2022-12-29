@@ -37,7 +37,7 @@ import java.io.InputStream;
 public class MainActivity extends AppCompatActivity {
 
     Button btn;
-    Bitmap bmp, scaledBitmap;
+    Bitmap bmp;
 
     private static final int PERMISSION_REQUEST_CODE = 200;
 
@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
 
         bmp = BitmapFactory.decodeResource(getResources(), R.drawable.villa_filomena_logo);
-        scaledBitmap = Bitmap.createScaledBitmap(bmp, 140, 140, false);
 
         if (checkPermission()) {
             Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
